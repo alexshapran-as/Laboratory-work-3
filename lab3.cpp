@@ -1,6 +1,6 @@
 /*
 Лабораторная работа №3
-Задание: ∑(k=1 -> ∞ ) = ((-1)^(k)*k)/((2k-1)^2*(2k+1)^2), eps = 0.001
+Задание: ∑(n=1 -> ∞ ) = ((-1)^(n)*n)/((2n-1)^2*(2n+1)^2), eps = 0.001
 Алексей Шапран 
 Группа: ИУ8-14
 */
@@ -11,24 +11,24 @@ using namespace std;
 
 int main(void)
 {	
-	int k = 0;
+	int n = 0;
 	int sign = -1;
 	double sum = 0.0; 
 	double sum_mod = 0.0; 
 	double eps = 0.001;
 
-	cout << endl << "Sum(k=1 -> infinity ) = ((-1)^(k)*k)/((2k-1)^2*(2k+1)^2), eps = 0.001" << endl;
+	cout << endl << "Sum(n=1 -> infinity ) = ((-1)^(n)*n)/((2n-1)^2*(2n+1)^2), eps = 0.001" << endl;
 
 	do 
 	{
-		k++;  
-		sum_mod = (double)((1)*k) / ( pow((2*k-1), 2)*pow((2*k+1), 2) );  
+		n++;  
+		sum_mod = (double)((1)*n) / ( pow((2*n-1), 2)*pow((2*n+1), 2) );  
 		sum += sign*sum_mod;  
 		sign *= -1;  
 	}
 	while(sum_mod >= eps);
 
-	cout << endl << "\tSum = " << sum << endl << "\tk = " << k << endl;
+	cout << endl << "\tSum = " << sum << endl << "\tn = " << n << endl;
 
 	return 0;
 }
