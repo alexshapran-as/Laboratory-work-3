@@ -1,6 +1,6 @@
 /*
 Лабораторная работа №3
-Задание: ∑(k=1 -> ∞ ) = (-1)^(k-1)/k^2, eps = 1e-4
+Задание: ∑(k=1 -> ∞ ) = ((-1)^(k)*k)/((2k-1)^2*(2k+1)^2), eps = 0.001
 Алексей Шапран 
 Группа: ИУ8-14
 */
@@ -12,17 +12,17 @@ using namespace std;
 int main(void)
 {	
 	int k = 0;
-	int sign = 1;
+	int sign = -1;
 	double sum = 0.0; 
 	double sum_mod = 0.0; 
-	double eps = 1e-4;
+	double eps = 0.001;
 
-	cout << endl << "Sum(k=1 -> infinity ) = (-1)^(k-1)/k^2" << endl;
+	cout << endl << "Sum(k=1 -> infinity ) = ((-1)^(k)*k)/((2k-1)^2*(2k+1)^2), eps = 0.001" << endl;
 
 	do 
 	{
 		k++;  
-		sum_mod = (double)1 / ( k * k );  
+		sum_mod = (double)((1)*k) / ( pow((2*k-1), 2)*pow((2*k+1), 2) );  
 		sum += sign*sum_mod;  
 		sign *= -1;  
 	}
